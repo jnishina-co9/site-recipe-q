@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チョコレート・マフィン | レシピサイト</title>
+  <meta name="description" content="ふんわり香る、しっとりが嬉しい チョコレートマフィンのレシピ。材料や作り方を丁寧に解説します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- OGP Meta Tags -->
+  <meta property="og:title" content="濃厚＆しっとり！失敗しないチョコレート・マフィンの黄金レシピ | Q (キュー)">
+  <meta property="og:description" content="濃厚なバターとたっぷりチョコレート。ボウル一つで混ぜるだけの、お菓子作り初心者にも優しいマフィンレシピを動画とあわせて紹介します。">
+  <meta property="og:url" content="https://recipe-q.netlify.app/">
+  <meta property="og:image" content="https://recipe-q.netlify.app/img/ogp.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+
+  <!-- ========================================
+       HEADER
+       ======================================== -->
+  <header class="site-header">
+    <!-- 上段: ロゴ + コピー + ハンバーガー -->
+    <div class="header-top">
+      <div class="header-logo">
+        <a href="#">
+          <img src="img/logo.png" alt="レシピサイト">
+        </a>
+      </div>
+      <div class="header-copy">
+        <p class="header-sub-copy">お菓子づくりをもっと手軽に、美味しく。</p>
+        <p class="header-main-copy">スイーツ専門レシピ動画サイト [Q (キュー)]</p>
+      </div>
+      <div class="hamburger" id="hamburger" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- 下段: フィルター横一列 -->
+    <div class="header-bottom">
+      <form class="header-search" action="#" method="get">
+        <div class="search-field">
+          <label for="genre">ジャンル</label>
+          <select id="genre" name="genre">
+            <option value="">選択しない</option>
+            <option value="sweets">スイーツ</option>
+            <option value="bread">パン</option>
+            <option value="meal">食事</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="time">調理時間</label>
+          <select id="time" name="time">
+            <option value="">選択しない</option>
+            <option value="15">〜15分</option>
+            <option value="30">〜30分</option>
+            <option value="60">〜60分</option>
+            <option value="60+">60分〜</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="difficulty">難易度</label>
+          <select id="difficulty" name="difficulty">
+            <option value="">選択しない</option>
+            <option value="easy">★</option>
+            <option value="medium">★★</option>
+            <option value="hard">★★★</option>
+          </select>
+        </div>
+        <div class="search-field search-field-keyword">
+          <label for="keyword">キーワード</label>
+          <input type="text" id="keyword" name="keyword" placeholder="">
+        </div>
+        <button type="submit" class="search-btn">
+          検索
+          <img src="img/icon-secrh.png" alt="">
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose" aria-label="閉じる">
+      <span></span>
+      <span></span>
+    </button>
+    <a href="#">ホーム</a>
+    <a href="#">レシピ一覧</a>
+    <a href="#">スイーツ</a>
+    <a href="#">パン</a>
+    <a href="#">食事</a>
+    <a href="#">特集</a>
+    <a href="#">お知らせ</a>
+  </nav>
+
+  <!-- ========================================
+       BREADCRUMB
+       ======================================== -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <div class="container">
+      <ol>
+        <li><a href="#">ホーム</a></li>
+        <li><a href="#">レシピ一覧</a></li>
+        <li><a href="#">焼き菓子</a></li>
+        <li><a href="#">マフィン</a></li>
+        <li>チョコレート・マフィン</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       HERO SECTION
+       ======================================== -->
+  <section class="hero">
+    <div class="hero-inner container">
+      <div class="hero-images">
+        <img src="img/img-muffin.png" alt="" class="hero-muffin-img">
+      </div>
+      <p class="hero-text">ふんわり香る、しっとりが嬉しい<br>チョコレート・マフィン</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       RECIPE DETAIL & VIDEO
+       ======================================== -->
+  <section class="recipe-detail">
+    <div class="container">
+      <div class="recipe-top">
+        <div class="recipe-info">
+          <h1>チョコレート・マフィン</h1>
+          <p class="recipe-description">
+            濃厚なバターの風味としっとり食感が幸せをもたらすチョコレート・マフィン。<br>
+            材料をボウルで混ぜ、型に入れて焼くだけなのでお菓子作り初心者さんにもおすすめ。<br>
+            刻みチョコレートをたっぷり入れた、ちょっぴり大人のマフィンです。
+          </p>
+          <div class="recipe-meta">
+            <span>調理時間：約40分</span>
+            <span>難易度：★★</span>
+          </div>
+        </div>
+        <div class="recipe-actions">
+          <div class="action-buttons">
+            <a href="#" class="btn-action" aria-label="印刷する">
+              <img src="img/icon-printer.png" alt="">
+              印刷する
+            </a>
+            <a href="#" class="btn-action" aria-label="スマホで見る">
+              <img src="img/icon-smartphone.png" alt="">
+              スマホで見る
+            </a>
+          </div>
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram"><img src="img/icon-instagram.png" alt="Instagram"></a>
+            <a href="#" aria-label="X"><img src="img/icon-x.png" alt="X"></a>
+            <a href="#" aria-label="Pinterest"><img src="img/icon-pinterst.png" alt="Pinterest"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Thumbnail -->
+      <div class="video-wrapper" id="videoThumbnail">
+        <video controls muted loop playsinline>
+          <source src="img/movie-recipe.mp4" type="video/mp4">
+          お使いのブラウザは動画タグに対応していません。
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       RECIPE SUMMARY (Basic Ingredients & Points)
+       ======================================== -->
+  <section class="recipe-summary">
+    <div class="container">
+      <div class="ingredients-top">
+        <div class="ingredients-left">
+          <p class="ingredients-basic-heading">基本の材料（直径6cmのマフィンカップ1個分）</p>
+          <dl class="ingredients-basic-list">
+            <div>
+              <dt>無塩バター</dt>
+              <dd>20<span>g</span></dd>
+            </div>
+            <div>
+              <dt>薄力粉</dt>
+              <dd>22<span>g</span></dd>
+            </div>
+            <div>
+              <dt>ベーキングパウダー</dt>
+              <dd>1<span>g</span></dd>
+            </div>
+            <div>
+              <dt>砂糖</dt>
+              <dd>10<span>g</span></dd>
+            </div>
+            <div>
+              <dt>塩</dt>
+              <dd>0.2<span>g</span></dd>
+            </div>
+            <div>
+              <dt>卵</dt>
+              <dd>10<span>g</span></dd>
+            </div>
+            <div>
+              <dt>牛乳</dt>
+              <dd>10<span>ml</span></dd>
+            </div>
+            <div>
+              <dt>バニラエッセンス</dt>
+              <dd>0.1<span>g</span></dd>
+            </div>
+            <div>
+              <dt>ミルクチョコレート</dt>
+              <dd>4<span>g</span></dd>
+            </div>
+          </dl>
+        </div>
+        <div class="ingredients-right">
+          <div class="cooking-points-box">
+            <h3>料理のポイント</h3>
+            <p>
+              オーブンは必ず予熱を完了させてから焼いてください。<br>
+              予熱機能のないオーブンの場合は温度を設定し10分程度加熱を行った後に焼き始めてください。<br>
+              焼き色が付きすぎてしまう場合は、アルミホイルをかけてください。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       INGREDIENTS CALCULATOR
+       ======================================== -->
+  <section class="ingredients-calculator">
+    <div class="container">
+      <div class="calculator-header">
+        <p class="calculator-intro">＼ あなたの作りたい分量を計測できます！ ／</p>
+        <h2 class="section-title">
+          分量シミュレーター
+          <span class="section-title-en">Ingredients Calculator</span>
+        </h2>
+      </div>
+
+      <div class="servings-input-wrapper">
+        <select id="servings" title="個数を選択">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+        </select>
+        <span class="servings-label">個分の材料</span>
+      </div>
+
+      <ul class="calculator-list" id="ingredientList">
+        <li class="calculator-item">
+          <span class="item-name">薄力粉</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="25">25</span>
+          </span>
+          <span class="item-unit">g</span>
+        </li>
+        <li class="calculator-item">
+          <span class="item-name">ベーキングパウダー</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="1">1</span>
+          </span>
+          <span class="item-unit">g</span>
+        </li>
+        <li class="calculator-item">
+          <span class="item-name">ココアパウダー</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="3.75">3.75</span>
+          </span>
+          <span class="item-unit">g</span>
+        </li>
+        <li class="calculator-item">
+          <span class="item-name">無塩バター</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="15">15</span>
+          </span>
+          <span class="item-unit">g</span>
+        </li>
+        <li class="calculator-item">
+          <span class="item-name">グラニュー糖</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="17.5">17.5</span>
+          </span>
+          <span class="item-unit">g</span>
+        </li>
+        <li class="calculator-item">
+          <span class="item-name">卵</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="0.25">0.25</span>
+          </span>
+          <span class="item-unit">個</span>
+        </li>
+        <li class="calculator-item">
+          <span class="item-name">牛乳</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="12.5">12.5</span>
+          </span>
+          <span class="item-unit">ml</span>
+        </li>
+        <li class="calculator-item">
+          <span class="item-name">チョコチップ</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="10">10</span>
+          </span>
+          <span class="item-unit">g</span>
+        </li>
+        <li class="calculator-item">
+          <span class="item-name">ミルクチョコレート</span>
+          <span class="item-leader"></span>
+          <span class="item-result-wrapper">
+            <span class="item-result" data-base="7.5">7.5</span>
+          </span>
+          <span class="item-unit">g</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================
+       INSTRUCTIONS
+       ======================================== -->
+  <section class="instructions">
+    <div class="container">
+      <h2 class="section-title">
+        作り方
+        <span class="section-title-en">Directions</span>
+      </h2>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-number">1</span>
+          <p class="step-text">
+            薄力粉、ベーキングパウダーを2回ほどふるう。
+          </p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">2</span>
+          <p class="step-text">
+            室温に戻してやわらかくした無塩バターをボウルに入れ、砂糖、塩、バニラエッセンスを加えながら白くクリーム状になるまでハンドミキサー（泡立て器）でよく混ぜる。
+          </p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">3</span>
+          <p class="step-text">
+            溶き卵を少しずつ加えながらさらに混ぜる。
+          </p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">4</span>
+          <p class="step-text">
+            牛乳とふるっておいた薄力粉、ベーキングパウダーを交互に2～3回に分けて加え混ぜる。
+          </p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">5</span>
+          <p class="step-text">
+            刻んだチョコレートを加え、ゴムベラで軽く混ぜ合わせマフィンカップへ均等に流し入れる。
+          </p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">6</span>
+          <p class="step-text">
+            180°Cに予熱したオーブンで約22～25分、竹串を刺してぬれた生地が付かなくなるまで焼く。
+          </p>
+        </div>
+        <div class="step-item">
+          <span class="step-number">7</span>
+          <p class="step-text">
+            網の上で冷まして完成！
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       RECOMMENDED RECIPES
+       ======================================== -->
+  <section class="recommended">
+    <div class="container">
+      <h2 class="section-title">
+        おすすめレシピ
+        <span class="section-title-en">Recommended</span>
+      </h2>
+
+      <div class="carousel-wrapper">
+        <div class="carousel-main">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-card">
+              <img src="img/recommend1.png" alt="ベリータルト">
+              <div class="card-overlay"><span>ベリーたっぷりの<br>フルーツタルト</span></div>
+            </div>
+            <div class="carousel-card">
+              <img src="img/recommend2.png" alt="バナナケーキ">
+              <div class="card-overlay"><span>しっとり濃厚<br>バナナケーキ</span></div>
+            </div>
+            <div class="carousel-card">
+              <img src="img/recommend3.png" alt="チョコレートケーキ">
+              <div class="card-overlay"><span>とろける<br>チョコレートケーキ</span></div>
+            </div>
+            <div class="carousel-card">
+              <img src="img/recommend4.png" alt="抹茶マフィン">
+              <div class="card-overlay"><span>ほろ苦い<br>抹茶マフィン</span></div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-btn prev" id="carouselPrev" aria-label="前へ">
+          <img src="img/icon-arrow-left.png" alt="">
+        </button>
+        <button class="carousel-btn next" id="carouselNext" aria-label="次へ">
+          <img src="img/icon-arrow-right.png" alt="">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FEATURES (SPECIAL)
+       ======================================== -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">
+        特集
+        <span class="section-title-en">Features</span>
+      </h2>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="img/special1.png" alt="美味しいコーヒーの淹れ方">
+          <div class="feature-label">美味しいコーヒーの淹れ方 ～ホットコーヒー編～</div>
+          <div class="card-overlay"><span>美味しいコーヒーの淹れ方<br>～ホットコーヒー編～</span></div>
+        </div>
+        <div class="feature-card">
+          <img src="img/special2.png" alt="紅茶の淹れ方">
+          <div class="feature-label">お家でカンタン！紅茶の淹れ方ゴールデンルール</div>
+          <div class="card-overlay"><span>お家でカンタン！<br>紅茶の淹れ方ゴールデンルール</span></div>
+        </div>
+        <div class="feature-card">
+          <img src="img/special3.png" alt="基本の道具と使い方">
+          <div class="feature-label">お菓子づくり初心者さんのための基本の道具と使い方</div>
+          <div class="card-overlay"><span>お菓子づくり初心者さんのための<br>基本の道具と使い方</span></div>
+        </div>
+        <div class="feature-card">
+          <img src="img/special4.png" alt="和菓子レシピ">
+          <div class="feature-label">春を感じるとっておきの和菓子レシピ</div>
+          <div class="card-overlay"><span>春を感じる<br>とっておきの和菓子レシピ</span></div>
+        </div>
+      </div>
+
+      <div class="features-link">
+        <a href="#">特集一覧へ &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       BOTTOM SEARCH & KEYWORDS
+       ======================================== -->
+  <section class="bottom-search">
+    <div class="container">
+      <div class="bottom-search-inner">
+        <div class="bottom-search-left">
+          <div class="bottom-search-bar">
+            <div class="search-field">
+              <label for="genre2">ジャンル</label>
+              <select id="genre2" name="genre2">
+                <option value="">選択</option>
+                <option value="sweets">スイーツ</option>
+                <option value="bread">パン</option>
+                <option value="meal">食事</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <label for="time2">調理時間</label>
+              <select id="time2" name="time2">
+                <option value="">選択</option>
+                <option value="15">〜15分</option>
+                <option value="30">〜30分</option>
+                <option value="60">〜60分</option>
+                <option value="60+">60分〜</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <label for="difficulty2">難易度</label>
+              <select id="difficulty2" name="difficulty2">
+                <option value="">選択</option>
+                <option value="easy">★</option>
+                <option value="medium">★★</option>
+                <option value="hard">★★★</option>
+              </select>
+            </div>
+            <div class="search-field">
+              <label for="keyword2">キーワード</label>
+              <input type="text" id="keyword2" name="keyword2" placeholder="">
+            </div>
+            <button type="button" class="search-btn">
+              <img src="img/icon-secrh.png" alt="">
+              検索
+            </button>
+          </div>
+        </div>
+        <div class="bottom-search-right">
+          <div class="keyword-section">
+            <h3>このレシピのキーワード</h3>
+            <div class="keyword-list">
+              <a href="#">チョコレート</a>
+              <a href="#">マフィン</a>
+              <a href="#">ココア</a>
+              <a href="#">焼き菓子</a>
+              <a href="#">おやつ</a>
+              <a href="#">バレンタイン</a>
+            </div>
+          </div>
+          <div class="keyword-section">
+            <h3>人気のキーワード</h3>
+            <div class="keyword-list">
+              <a href="#">チーズケーキ</a>
+              <a href="#">クッキー</a>
+              <a href="#">パウンドケーキ</a>
+              <a href="#">シフォンケーキ</a>
+              <a href="#">タルト</a>
+              <a href="#">プリン</a>
+              <a href="#">スコーン</a>
+              <a href="#">パンケーキ</a>
+              <a href="#">ブラウニー</a>
+              <a href="#">ドーナツ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom breadcrumb -->
+      <nav class="breadcrumb-bottom" aria-label="パンくずリスト（下部）">
+        <ol>
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#">レシピ一覧</a></li>
+          <li><a href="#">焼き菓子</a></li>
+          <li><a href="#">マフィン</a></li>
+          <li>チョコレート・マフィン</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <a href="#" class="back-to-top" id="backToTop" aria-label="トップへ戻る">
+        <img src="img/icon-arrow-top.png" alt="">
+      </a>
+
+      <div class="footer-inner">
+        <div class="footer-left">
+          <div class="footer-logo">
+            <img src="img/logo.png" alt="">
+            <span>スイーツ専門レシピ動画サイト [Q (キュー)]</span>
+          </div>
+          <nav class="footer-nav">
+            <a href="#">レシピ一覧</a>
+            <a href="#">特集</a>
+            <a href="#">お知らせ</a>
+            <a href="#">よくある質問</a>
+            <a href="#">お問い合わせ</a>
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">利用規約</a>
+          </nav>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><img src="img/icon-instagram.png" alt="Instagram"></a>
+            <a href="#" aria-label="X"><img src="img/icon-x.png" alt="X"></a>
+            <a href="#" aria-label="Pinterest"><img src="img/icon-pinterst.png" alt="Pinterest"></a>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <div class="newsletter-form">
+            <p>メルマガに登録してレシピを受け取る</p>
+            <div class="newsletter-input-group">
+              <input type="email" placeholder="メールアドレス" aria-label="メールアドレス">
+              <button type="button">登録</button>
+            </div>
+          </div>
+          <div class="app-badges">
+            <a href="#"><img src="img/bnr-onlineshop.png" alt="オンラインショップ"></a>
+            <a href="#"><img src="img/bnr-app.png" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Q All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
