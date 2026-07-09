@@ -1,2 +1,6 @@
+.agents/
 .agent/
-MEMO.md
+Thumbs.db
+.DS_Store
+*.log
+*.md
